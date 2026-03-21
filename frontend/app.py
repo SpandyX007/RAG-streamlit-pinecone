@@ -1,10 +1,6 @@
 ﻿import streamlit as st
-import os
 import uuid
-from dotenv import load_dotenv
 import requests
-
-load_dotenv()
 
 # BACKEND = 'http://127.0.0.1:8000'
 BACKEND = 'https://rag-streamlit-pinecone.vercel.app'
