@@ -10,4 +10,3 @@ bs4
 langchain[google-genai]
 fastapi[standard]
 uvicorn[standard]
-streamlit
