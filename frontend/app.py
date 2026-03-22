@@ -3,7 +3,8 @@ import uuid
 import requests
 
 # BACKEND = 'http://127.0.0.1:8000'
-BACKEND = 'https://rag-streamlit-pinecone.vercel.app'
+BACKEND = 'https://guileless-nonpervertible-ai.ngrok-free.dev'
+# BACKEND = 'https://rag-streamlit-pinecone.vercel.app'
 
 # Initialize session state
 if "session_id" not in st.session_state:
