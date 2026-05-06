@@ -8,7 +8,7 @@ from pydantic import BaseModel
 from session_store import update_session
 
 from vectorDB.getDB import get_vecstore
-from langchain_pinecone import PineconeVectorStore
+from langchain_pinecone import Pinecone as PineconeVectorStore
 from langchain_community.document_loaders import WebBaseLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from fastapi import HTTPException

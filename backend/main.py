@@ -9,6 +9,7 @@ from injestion.injestion import injestion_router
 from retrieval.retrieval import retrieval_router
 from vectorDB.getDB import delete_records
 from session_store import active_sessions
+from fastapi.middleware.cors import CORSMiddleware
 
 # Configuration (Times in seconds)
 SESSION_TIMEOUT = 3600  # 1 hour
@@ -42,6 +43,14 @@ async def lifespan(app: FastAPI):
     cleanup_task.cancel()
 
 app = FastAPI(lifespan=lifespan)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Adjust in production
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 app.include_router(injestion_router)
 app.include_router(retrieval_router)

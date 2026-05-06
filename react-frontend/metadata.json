@@ -1,0 +1,6 @@
+{
+  "name": "Web Link Chat Assistant",
+  "description": "A frontend for a RAG application that allows users to chat with the content of any web page.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}

@@ -1,9 +1,9 @@
-﻿import streamlit as st
+import streamlit as st
 import uuid
 import requests
 
-# BACKEND = 'http://127.0.0.1:8000'
-BACKEND = 'https://guileless-nonpervertible-ai.ngrok-free.dev'
+BACKEND = 'http://127.0.0.1:8000'
+# BACKEND = 'https://guileless-nonpervertible-ai.ngrok-free.dev'
 # BACKEND = 'https://rag-streamlit-pinecone.vercel.app'
 
 # Initialize session state

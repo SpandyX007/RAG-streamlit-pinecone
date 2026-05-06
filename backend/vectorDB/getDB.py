@@ -5,7 +5,7 @@ from pinecone import Pinecone
 from pinecone import ServerlessSpec
 
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
-from langchain_pinecone import PineconeVectorStore
+from langchain_pinecone import Pinecone as PineconeVectorStore
 
 load_dotenv()
 
