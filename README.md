@@ -4,12 +4,12 @@
 This project is a Retrieval-Augmented Generation (RAG) application that allows users to interact with the content of any web page via a conversational interface. The system ingests content from a user-provided URL, processes and embeds the text, and stores it in a Pinecone vector database. Users can then query the ingested document using a Streamlit frontend, which communicates with a FastAPI backend powered by LangChain and Google Generative AI (Gemini).
 
 ## Architecture
-The application is divided into two main components:
-- **Frontend**: A Streamlit chat interface that manages user sessions and communicates with the backend API.
+The application is divided into frontend and backend components:
+- **Frontends**: A Streamlit chat interface and a React web application that manage user sessions and communicate with the backend API.
 - **Backend**: A FastAPI server that handles web scraping, text splitting, embedding generation, semantic search, and prompt formatting.
 
 ### Core Technologies
-- **Frameworks**: FastAPI, Streamlit
+- **Frameworks**: FastAPI, Streamlit, React, Vite
 - **AI / LLM**: LangChain, Google Generative AI (Gemini 3.1 Flash Lite Preview, Gemini Embedding 2 Preview)
 - **Vector Database**: Pinecone (Serverless)
 
@@ -35,10 +35,15 @@ To run this application, you will need the following API keys:
    ```
 
 2. **Install the required dependencies:**
-   Ensure you have installed the necessary packages for both frontend and backend.
+   Ensure you have installed the necessary packages for the backend and Streamlit frontend.
    ```bash
    pip install -r backend/requirements.txt
    pip install streamlit requests
+   ```
+   For the React frontend, navigate to the `react-frontend` directory and install the Node modules:
+   ```bash
+   cd react-frontend
+   npm install
    ```
 
 3. **Environment Variables:**
@@ -59,13 +64,25 @@ uvicorn main:app --reload
 ```
 The backend API will be available at `http://127.0.0.1:8000`.
 
-### 2. Start the Frontend Application
+### 2. Start the Frontends
+
+You can run either or both of the available frontends:
+
+#### Option A: Streamlit Frontend
 Open a new terminal, activate your virtual environment, navigate to the `frontend` directory, and start Streamlit:
 ```bash
 cd frontend
 streamlit run main.py
 ```
 The Streamlit interface will be accessible in your web browser, typically at `http://localhost:8501`.
+
+#### Option B: React Frontend
+Open a new terminal, navigate to the `react-frontend` directory, and start the development server:
+```bash
+cd react-frontend
+npm run dev
+```
+The React interface will be accessible in your web browser, typically at `http://localhost:5173`.
 
 ## API Endpoints
 - `GET /`: Health check endpoint to verify the service is running.
